@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Especifica que el documento está escrito en HTML5 -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura que la web sea responsive -->
+    <title>Portafolio - Lola</title> <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="styles.css"> <!-- Vincula el archivo CSS externo -->
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <div class="navbar">
+        <!-- Logo con un enlace a la página principal -->
+        <a href="#"><img src="img/logo.png" alt="Logo" /></a>
+        <div>
+            <!-- Enlaces de navegación que llevan a diferentes secciones de la página -->
+            <a href="#mood">Mood</a>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Contenedor de fondo principal -->
+    <div class="background-container">
+        <!-- Título principal con un enlace a un video -->
+        <div class="content">
+            <h1 class="art-title">
+                <a href="https://www.youtube.com/watch?v=cvh0nX08nRw" target="_blank" style="color: inherit; text-decoration: none;">
+                    Art by Lola Martinez
+                </a>
+            </h1>
+            <!-- Descripción corta -->
+            <p>Aquí encontrarás mis mejores trabajos y proyectos.</p>
+        </div>
+    </div>
+
+    <!-- Sección de mood: imágenes relacionadas con el estilo o inspiración -->
+    <div id="mood">
+        <!-- Cada "mood-image" contiene dos imágenes: una principal y otra de fondo -->
+        <div class="mood-image">
+            <img src="img/unnamed (5).jpg" alt="serpiente" />
+            <img class="img-background" src="img/unnamed (11).jpg" alt="campera" />
+        </div>
+        <!-- Repite el formato para más imágenes -->
+        <div class="mood-image">
+            <img src="img/unnamed.jpg" alt="sirena" />
+            <img class="img-background" src="img/unnamed (8).jpg" alt="lobo" />
+        </div>
+        <!-- Sigue el patrón para el resto de las imágenes -->
+        <div class="mood-image">
+            <img src="img/unnamed (9).jpg" alt="sangre" />
+            <img class="img-background" src="img/unnamed (10).jpg" alt="bosque" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed (14).jpg" alt="luna" />
+            <img class="img-background" src="img/unnamed (2).jpg" alt="wos" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed (13).jpg" alt="pibe" />
+            <img class="img-background" src="img/unnamed (10).jpg" alt="bosque" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed (13).jpg" alt="pibe" />
+            <img class="img-background" src="img/unnamed (8).jpg" alt="lobo" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed (9).jpg" alt="sangre" />
+            <img class="img-background" src="img/unnamed (10).jpg" alt="bosque" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed.jpg" alt="sirena" />
+            <img class="img-background" src="img/unnamed (8).jpg" alt="lobo" />
+        </div>
+        <div class="mood-image">
+            <img src="img/unnamed (9).jpg" alt="sangre" />
+            <img class="img-background" src="img/unnamed (2).jpg" alt="bosque" />
+        </div>
+    </div>
+
+
+    <!-- Sección de trabajos destacados -->
+    <section id="work">
+        <h2>Algunos de mis trabajos</h2>
+        <div class="work-gallery">
+            <!-- Cada "work-item" muestra un trabajo con su respectiva imagen -->
+            <div class="work-item img">
+                <img src="img/dibujo1.jpg" alt="Trabajo 1">
+            </div>
+            <div class="work-item img">
+                <img src="img/dibujo3.jpg" alt="Trabajo 2">
+            </div>
+            <div class="work-item img">
+                <img src="img/dibujo2.jpg" alt="Trabajo 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección "About", con información personal sobre la autora -->
+    <section id="about">
+        <!-- Imagen personal -->
+        <div style="flex: 1; padding: 20px;">
+            <img src="img/yop.jpg" alt="Lola" />
+        </div>
+        <!-- Descripción personal -->
+        <div style="flex: 1; padding: 20px; color: white;">
+            <h2>HOLISS</h2>
+            <p>
+                Soy Lola Martínez, una artista apasionada del arte y la creatividad. Desde temprana edad, el dibujo y la pintura han sido mi forma de expresión favorita. Me especializo en ilustración digital, donde exploro diferentes técnicas y estilos para contar historias visuales que resuenan con mis experiencias y emociones.
+            </p>
+            <p>
+                Me encanta experimentar con una variedad de técnicas, desde acuarelas tradicionales hasta herramientas digitales, lo que me permite descubrir nuevas formas de expresión y enriquecer mi proceso creativo. Cada técnica aporta su propia magia y desafío, y disfruto encontrar maneras de combinarlas para crear obras únicas.
+            </p>
+            <p>
+                Mi inspiración proviene de la naturaleza, la música y las interacciones humanas, buscando siempre transmitir un mensaje profundo en cada pieza. Actualmente, estoy estudiando en la universidad y sigo perfeccionando mis habilidades artísticas. 
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de encargo de cuadros -->
+<section id="order">
+    <h2>Encargar un cuadro</h2>
+    <p>Completa el siguiente formulario para encargar un cuadro personalizado.</p>
+
+    <form action="#" method="post" class="order-form">
+
+       <label for="text">Nombre del cliente:</label>
+       <input type="text" name="Name" />
+
+       <!-- Tipo de pintura -->
+        <label for="type">Tipo de pintura:</label>
+        <select id="type" name="type">
+            <option value="acuarela">Acuarela</option>
+            <option value="acrilico">Acrílico</option>
+            <option value="oleo">Óleo</option>
+            <option value="lapiz">Lapiz</option>
+            <option value="marcadores">Marcadores</option>
+        </select>
+
+       <!-- Color principal con selector de color -->
+       <label for="color">Color principal:</label>
+       <input type="color" id="color" name="color" value="#581467" required>
+       
+        <!-- Descripción del cuadro -->
+        <label for="description">Descripción del cuadro:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Describe lo que te gustaría (paisaje, retrato, etc.)" required></textarea>
+
+        <label for="avatar">puedes subir aqui una referencia para el cuadro:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+
+            <label for="phone">numero telefonico:</label><br><br>
+            <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br><br>
+            <small>Format: 123-475-678</small><br><br>
+
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email">
+
+        <!-- Botón para enviar -->
+        <button type="submit">Enviar encargo</button>
+
+    </form>
+</section>
+
+
+    <!-- Sección de contacto -->
+    <section id="contact">
+        <h2>Contacto</h2>
+        <!-- Breve descripción de cómo contactarse -->
+        <p>Si deseas ponerte en contacto, puedes enviarme un correo a:</p>
+        <p><strong>lola.martinez1230@gmail.com</strong></p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,279 @@
+/* Estilo global */
+* {
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding: 0; /* Elimina rellenos predeterminados */
+    box-sizing: border-box; /* Incluye bordes y padding dentro del tamaño total */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Estilo general de texto */
+}
+
+/* Barra del menú */
+.navbar {
+    background-color: black; /* Fondo negro */
+    color: rgb(255, 255, 255); /* Texto blanco */
+    display: flex; /* Flexbox para alinear los elementos del menú */
+    justify-content: space-between; /* Espacio entre logo y enlaces */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 20px 25px; /* Relleno interno */
+    position: fixed; /* Permite que la barra quede fija al desplazarse */
+    width: 100%; /* Ancho completo */
+    z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+/* Cambios posibles:
+- Usar `justify-content: space-around` para repartir espacio entre todos los elementos.
+- Usar `flex-wrap: wrap` si se añaden más enlaces y no caben en una sola línea.
+*/
+
+.navbar img {
+    height: 40px; /* Ajusta la altura del logo */
+    cursor: pointer; /* Cambia el cursor a "mano" al pasar por encima */
+}
+
+.navbar a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado */
+    margin-left: 20px; /* Espaciado entre enlaces */
+    font-size: 1.2rem; /* Tamaño de letra */
+}
+
+/* Fondo principal */
+.background-container {
+    background-image: url('img/fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Escala para cubrir el contenedor */
+    background-position: center; /* Centra la imagen */
+    height: 100vh; /* Altura igual al alto de la ventana */
+    position: relative; /* Posición relativa para contenido superpuesto */
+    display: flex; /* Flexbox para alinear contenido */
+    justify-content: center; /* Centra contenido horizontalmente */
+    align-items: center; /* Centra contenido verticalmente */
+    flex-direction: column; /* Apila elementos en columna */
+}
+
+/* Cambios posibles:
+- Usar `background-attachment: fixed` para efecto parallax.
+- Cambiar `flex-direction` a `row` para mostrar elementos en línea.
+*/
+
+.content {
+    color: white; /* Texto blanco */
+    text-align: center; /* Centra el texto */
+    z-index: 1; /* Asegura que esté encima del fondo */
+}
+
+h1 {
+    font-size: 3rem; /* Define el tamaño del texto para el título principal */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra al texto */
+}
+
+#mood {
+    display: flex; /* Activa el modelo de caja flexible (flexbox) para distribuir los elementos de forma flexible */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente fila si no caben en la actual */
+    margin-top: 0; /* Elimina el margen superior predeterminado */
+    padding: 20px; /* Añade espacio interno alrededor de la sección */
+    position: relative; /* Posiciona el contenedor de forma relativa para los elementos absolutamente posicionados dentro */
+    background-color: rgb(27, 27, 27); /* Define el color de fondo de la sección */
+}
+/* Estiliza cada contenedor de imágenes en la sección mood */
+.mood-image {
+    position: relative; /* Posiciona de manera relativa para que se pueda posicionar el fondo de manera absoluta dentro de este contenedor */
+    overflow: hidden; /* Recorta cualquier parte de las imágenes que se salgan del contenedor */
+    width: calc(33.33% - 10px); /* Divide el ancho del contenedor en 3 columnas, ajustando el margen entre ellas */
+    margin: 5px; /* Añade espacio entre las imágenes */
+    height: 200px; /* Establece una altura fija para cada contenedor de imagen */
+}
+/* Estiliza las imágenes principales dentro de los contenedores mood-image */
+.mood-image img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho disponible del contenedor */
+    height: 100%; /* Hace que la imagen ocupe toda la altura disponible del contenedor */
+    object-fit: cover; /* Asegura que la imagen mantenga su proporción y llene completamente el contenedor */
+    transition: transform 0.3s ease; /* Aplica una transición suave para el efecto de escalado en el hover */
+}
+
+/* Estiliza la imagen de fondo para cada contenedor mood-image */
+.mood-image .img-background {
+    position: absolute; /* Posiciona la imagen de fondo de forma absoluta dentro del contenedor */
+    top: 0; /* Coloca la imagen en la parte superior del contenedor */
+    left: 0; /* Coloca la imagen en el lado izquierdo del contenedor */
+    width: 100%; /* Hace que la imagen de fondo ocupe todo el ancho disponible */
+    height: 100%; /* Hace que la imagen de fondo ocupe toda la altura disponible */
+    object-fit: cover; /* Ajusta la imagen para que llene completamente el contenedor */
+    opacity: 0; /* Hace que la imagen de fondo sea invisible por defecto */
+    transition: opacity 0.3s ease; /* Aplica una transición suave para el cambio de opacidad */
+}
+
+
+/* Cambia la opacidad de la imagen de fondo al pasar el mouse sobre el contenedor */
+.mood-image:hover .img-background { /* Hace visible la imagen de fondo al pasar el mouse */
+    opacity: 1;
+}
+
+/* Aplica un efecto de zoom a la imagen principal al pasar el mouse sobre el contenedor */
+.mood-image:hover img {
+    transform: scale(1.1); /* Escala la imagen un 10% más grande al hacer hover */
+    z-index: 1; /* Asegura que la imagen esté por encima de otros elementos si es necesario */
+}
+
+/* Galería de obras */
+#work {
+    padding: 40px 20px; /* Espaciado interno */
+    color: white; /* Texto blanco */
+    background-color: #1a1a1a; /* Fondo oscuro */
+    text-align: center; /* Centra el texto */
+}
+
+.work-gallery {
+    display: flex; /* Flexbox para organizar imágenes */
+    justify-content: center; /* Centra las imágenes */
+    gap: 20px; /* Espaciado entre imágenes */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en filas */
+    margin-top: 20px;
+}
+
+/* Cambios posibles:
+- Usar `justify-content: flex-start` para alinear las imágenes a la izquierda.
+- Cambiar `gap` para ajustar la separación entre imágenes.
+*/
+
+.work-item {
+    width: 30%; /* Cada elemento ocupa el 30% del ancho */
+    max-width: 300px; /* Ancho máximo para evitar imágenes muy grandes */
+}
+
+.work-item img {
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Escala la imagen sin deformarla */
+    height: auto; /* Altura proporcional */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+ /* Efecto de zoom al pasar el ratón por encima */
+ .work-item img:hover {
+    transform: scale(1.2); /* Amplía la imagen en un 20% */
+}
+
+/* Sección "Sobre mí" */
+#about {
+    padding: 20px 20px; /* Espaciado interno */
+    display: flex; /* Flexbox para dividir el contenido en columnas */
+    background-color: #1a1a1a; /* Fondo oscuro */
+}
+
+#about p {
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif;
+    margin-bottom: 15px;
+}
+
+
+/* Cambios posibles:
+- Usar `flex-direction: column` para apilar los elementos verticalmente.
+- Usar `justify-content: space-between` para separar las columnas.
+*/
+
+#about img {
+    overflow: hidden; /* Evita que la imagen salga del contenedor */
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-right: 20px; /* Espaciado a la derecha */
+    object-fit: cover; /* Mantiene la proporción de la imagen sin deformarla */
+      transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+
+/* Sección de encargo */
+#order {
+    padding: 40px 20px;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+#order h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#order p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.order-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.order-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+/* Ajuste del selector de color */
+.order-form input[type="color"] {
+    height: 40px;
+    width: 100%; /* Asegura que tenga el mismo ancho que otros campos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+/* Centrar botón */
+.button-container {
+    text-align: center; /* Centra el botón */
+}
+
+.order-form button {
+    background-color: #aa3434;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: inline-block; /* Para mantener el botón alineado correctamente */
+}
+
+.order-form button:hover {
+    background-color: #8934aa;
+}
+
+
+/* Sección de contacto */
+#contact {
+    padding: 40px 20px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+}
+
+#contact p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: white; /* Color del texto */
+}
+
+strong {
+    font-size: 1.5rem; /* Tamaño más grande para resaltar */
+}
+
